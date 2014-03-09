@@ -200,9 +200,8 @@ def start_server(host=DEFAULT_HOST, port=DEFAULT_PORT, log=None,
     server = SimpleXMLRPCServer((host, port), logRequests=log)
     server.register_introspection_functions()
     server.register_instance(parser)
-    
-	self.verbose:
-	    print >>sys.stderr, "Alpino server listening on %s:%d" % (host, port)
+
+    #print >>sys.stderr, "Alpino server listening on %s:%d" % (host, port)
     server.serve_forever()
     
     
