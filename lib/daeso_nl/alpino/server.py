@@ -124,10 +124,9 @@ class AlpinoParser(object):
                     raise
             
         self._log("Parser output:\n", output)
-        
-        # Parser output is encoded in iso-8859-1, but methods of an exposed
-        # object must return either str or unicode when returning a string 
-        return output.decode("iso-8859-1")
+
+        # return the output of the open() in UTF-8
+        return output
     
     
 

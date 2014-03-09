@@ -57,8 +57,7 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-server_proxy = ServerProxy("http://" + args.host,
-                           encoding="iso-8859-1")
+server_proxy = ServerProxy("http://" + args.host, encoding="iso-8859-1")
 
 try:
     server_proxy.parse("test")
@@ -73,8 +72,8 @@ while True:
     except (KeyboardInterrupt, EOFError):
         exit(0)
 
-    # convert to iso-8859-1
-    sentence = sentence.decode(args.input_encoding).encode("iso-8859-1")
+    # convert to utf-8
+    sentence = sentence.decode(args.input_encoding).encode("utf-8")
     
     try:
         parse = server_proxy.parse(sentence, "last", args.timeout)
