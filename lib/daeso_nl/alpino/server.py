@@ -201,7 +201,8 @@ def start_server(host=DEFAULT_HOST, port=DEFAULT_PORT, log=None,
     server.register_introspection_functions()
     server.register_instance(parser)
     
-    print >>sys.stderr, "Alpino server listening on %s:%d" % (host, port)
+	self.verbose:
+	    print >>sys.stderr, "Alpino server listening on %s:%d" % (host, port)
     server.serve_forever()
     
     
